@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { basicDetails } from '../services/userDetails';
+import Loader from './Loader';
 
 type Option = {
   label: string;
@@ -17,14 +19,18 @@ const options: Option[] = [
 type MyFunctionType = (num: number) => void;
 
 interface basicDetailsProps {
-  setForm: MyFunctionType
+  setForm: MyFunctionType,
+  setAllFormData: MyFunctionType,
+  allFormData: any,
 }
 
-const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm }) => {
+const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormData, allFormData }) => {
   const Navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [loade, setLoade] = useState<boolean>(false);
+  const [errorMesage, setErrorMessage] = useState<string>('');
 
   const handleOptionToggle = (value: string) => {
     if (selectedOptions.includes(value)) {
@@ -48,14 +54,43 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm }) => {
     };
   }, []);
 
-  const nextFunct = () => {
-    setForm(2);
+  const nextFunct = async () => {
+    setLoade(true);
+    let allDetails = { ...allFormData, options: selectedOptions };
+    console.log('aa', allDetails);
+    let userId = localStorage.getItem('userId');
+    console.log('id', userId);
+    const callBasicDetailsapi = await basicDetails(
+      allDetails?.name,
+      allDetails?.email,
+      allDetails?.phoneNumber,
+      allDetails?.state,
+      allDetails?.line1,
+      allDetails?.line2,
+      allDetails?.city,
+      allDetails?.pincode,
+      allDetails?.country,
+      allDetails?.files,
+      allDetails?.options, userId);
+
+    if (callBasicDetailsapi.error) {
+      console.log('call', callBasicDetailsapi);
+      setErrorMessage(callBasicDetailsapi.error);
+      setLoade(false);
+      return;
+    }
+
+    setAllFormData({});
+    setForm(0);
+    setLoade(false);
     Navigate('/');
   };
+  console.log('se', selectedOptions)
 
   return (
     <>
-      <div className="w-96 relative">
+    {loade && <Loader />}
+      <div className="relative">
         <p className="text-2xl font-bold mb-4">Select you options</p>
         <div
           className="border border-gray-300 rounded p-2 cursor-pointer"
@@ -91,6 +126,7 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm }) => {
           Submit
         </button>
       </div>
+      <p className="text-red-500 text-xs italic mt-2 font-bold">{errorMesage}</p>
     </>
   );
 };

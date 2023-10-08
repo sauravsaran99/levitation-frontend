@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@types/dotenv": "^8.2.0",
+    "@types/googlemaps": "^3.43.3",
+    "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",

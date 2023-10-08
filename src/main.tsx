@@ -15,13 +15,14 @@ import UserDetails from './screens/UserDetails.tsx';
 import store from './redux/store.ts';
 import { Provider } from 'react-redux';
 import PrivateRoute from './routes/PrivateRoute.tsx';
+import PublicRouter from './routes/PublicRouter.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path='/' element={<App />}>
       <Route path='' element={<PrivateRoute><Home /></PrivateRoute>} />
-      <Route path='login' element={<Login />} />
-      <Route path='registration' element={<Registration />} />
+      <Route path='login' element={<PublicRouter><Login /></PublicRouter>} />
+      <Route path='registration' element={<PublicRouter><Registration /></PublicRouter>} />
       <Route path='userdetails' element={<PrivateRoute><UserDetails /></PrivateRoute>} />
     </Route>
   )

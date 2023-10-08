@@ -40,6 +40,7 @@ function Login() {
     if (submit?.message === 'Login successful') {
       const token = submit?.token;
       dispatch(login(token));
+      localStorage.setItem('userId', submit?.userId)
       navigate('/userdetails');
     } else {
       setErrorMessage(submit.error);

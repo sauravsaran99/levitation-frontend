@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './screens/Home'
 import { Outlet } from 'react-router-dom'
-import Login from './screens/Login'
+
+// const apiKey = process.env.REACT_APP_MY_API_KEY;  // Retrieve the environment variable 
+// console.log('API Key:', apiKey);
 
 function App() {
   const [count, setCount] = useState(0)

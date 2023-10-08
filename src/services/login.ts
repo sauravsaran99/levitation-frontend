@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+
 export const loginapi = async (email: string, password: string ) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -15,7 +17,7 @@ export const loginapi = async (email: string, password: string ) => {
   };
   try {
     const response = await fetch(
-      "http://localhost:3000/v1/api/users/login",
+      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/users/login`,
       requestOptions
     );
 

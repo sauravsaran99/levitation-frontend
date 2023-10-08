@@ -18,11 +18,10 @@ export const register = async (
     body: raw,
     redirect: "follow",
   };
-  console.log("Request Body:", raw);
-  console.log("Request Options:", requestOptions);
+
   try {
     const response = await fetch(
-      "http://localhost:3000/v1/api/users/register",
+      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/users/register`,
       requestOptions
     );
 

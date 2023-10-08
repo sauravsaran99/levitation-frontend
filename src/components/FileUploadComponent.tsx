@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useNavigate } from 'react-router-dom';
+import GeolocationStatus from './GeolocationStatus';
 
 const validFileTypes = ['image/png', 'application/pdf'];
 const maxFileLimit = 3;
@@ -8,14 +9,16 @@ const maxFileLimit = 3;
 type MyFunctionType = (num: number) => void;
 
 interface basicDetailsProps {
-  setForm: MyFunctionType
+  setForm: MyFunctionType,
+  setAllFormData: MyFunctionType,
+  allFormData: any,
 }
 
-const FileUploadComponent: React.FC<basicDetailsProps> = ({ setForm }) => {
+const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allFormData, setForm }) => {
   const Navigate = useNavigate();
   const [files, setFiles] = useState<File[]>([]);
   const [error, setError] = useState<string>('');
-
+// console.log('files', files)
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       const filteredFiles = acceptedFiles.filter(file => validFileTypes.includes(file.type));
@@ -52,11 +55,18 @@ const FileUploadComponent: React.FC<basicDetailsProps> = ({ setForm }) => {
   );
 
   const nextFunct = () => {
+    let newData = []
+    for(let i = 0; i <= files.length -1; i++) {
+      newData.push({name: files[i]?.name, path: files[i]?.path})
+    };
+    console.log('newData', newData)
+    setAllFormData({ ...allFormData, files: newData })
     setForm(2);
   };
 
   return (
     <>
+    <GeolocationStatus />
     <p className="text-2xl font-bold mb-4">Upload Files</p>
       <div className="p-4 border border-gray-300 rounded-lg cursor-pointer">
         <div {...getRootProps()} className="dropzone">

@@ -5,9 +5,11 @@ interface AuthState {
   token: string | null;
 }
 
+// Check if token exists in localStorage and set isAuthenticated accordingly
+const initialToken = localStorage.getItem('token');
 const initialState: AuthState = {
-  isAuthenticated: false,
-  token: localStorage.getItem('token') || null,
+  isAuthenticated: !!initialToken, // Set isAuthenticated to true if initialToken exists
+  token: initialToken || null,
 };
 
 const authSlice = createSlice({
