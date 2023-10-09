@@ -41,7 +41,7 @@ export const basicDetails = async (
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/userdetails/user-details`,
+      `levitation-backend-ya8c.vercel.app/v1/api/userdetails/user-details`,
       requestOptions
     );
 
@@ -71,7 +71,7 @@ export const getAllDetails = async (id: string | null) => {
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/userdetails/user-details/${id}`,
+      `levitation-backend-ya8c.vercel.app/v1/api/userdetails/user-details/${id}`,
       requestOptions
     );
 
@@ -102,7 +102,7 @@ export const getAllDetailsByEmail = async (email: string | null) => {
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/userdetails/user-details/email/${email}`,
+      `levitation-backend-ya8c.vercel.app/v1/api/userdetails/user-details/email/${email}`,
       requestOptions
     );
 

@@ -21,7 +21,7 @@ export const register = async (
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/users/register`,
+      `levitation-backend-ya8c.vercel.app/v1/api/users/register`,
       requestOptions
     );
 

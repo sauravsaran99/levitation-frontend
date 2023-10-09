@@ -15,7 +15,7 @@ export const loginapi = async (email: string, password: string ) => {
   };
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_BASE_URL}/v1/api/users/login`,
+      `levitation-backend-ya8c.vercel.app/v1/api/users/login`,
       requestOptions
     );
 
