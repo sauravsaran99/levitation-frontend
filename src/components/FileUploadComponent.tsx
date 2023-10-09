@@ -14,6 +14,8 @@ interface basicDetailsProps {
   allFormData: any,
 }
 
+type Accept = string | undefined;
+
 const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allFormData, setForm }) => {
   const Navigate = useNavigate();
   const [files, setFiles] = useState<File[]>([]);

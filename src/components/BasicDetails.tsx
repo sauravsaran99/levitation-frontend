@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface formStateProps {
     name: string,
@@ -24,7 +24,7 @@ interface basicDetailsProps {
 const BasicDetails: React.FC<basicDetailsProps> = ({ setForm, setAllFormData, allFormData }) => {
     const Navigate = useNavigate();
     const [emailerror, setEmailerror] = useState<boolean>(false)
-    const [passworderror, setPassworderror] = useState<boolean>(false);
+    // const [passworderror, setPassworderror] = useState<boolean>(false);
     const [errorMessage, setError] = useState<string>('');
     const [formData, setFormData] = useState<formStateProps>({
         name: '',

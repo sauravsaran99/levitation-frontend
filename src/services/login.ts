@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-
 export const loginapi = async (email: string, password: string ) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");

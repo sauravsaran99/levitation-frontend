@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getAllDetails } from '../services/userDetails';
 import UserTable from '../components/Table';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SearchComponent from '../components/SearchComponent';
 import Loader from '../components/Loader';
 
 function Home() {
   const navigate:any = useNavigate();
   let id: string | null = localStorage.getItem('userId');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
   const [loade, setLoade] = useState<boolean>(true);
 
   useEffect(() => {
