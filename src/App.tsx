@@ -6,7 +6,6 @@ import { Outlet } from 'react-router-dom'
 // console.log('API Key:', apiKey);
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
