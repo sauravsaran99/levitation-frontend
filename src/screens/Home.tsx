@@ -12,17 +12,17 @@ function Home() {
   const [loade, setLoade] = useState<boolean>(true);
 
   useEffect(() => {
-    console.log('111');
+    // console.log('111');
     (async () => {
       const detailsData = await getAllDetails(id);
-      console.log('details', detailsData);
+      // console.log('details', detailsData);
       setLoade(false);
       setData(detailsData);
     })()
   }, []);
 
 
-  console.log('data', data);
+  // console.log('data', data);
   return (
     <>
     {loade && <Loader />}

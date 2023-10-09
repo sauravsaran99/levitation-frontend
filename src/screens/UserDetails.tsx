@@ -10,7 +10,7 @@ function UserDetails() {
 
   });
 
-  console.log('all', allFormData);
+  // console.log('all', allFormData);
   return (
     <>
       {form === 0 && <BasicDetails setAllFormData={setAllFormData} allFormData={allFormData} setForm={setForm} />}

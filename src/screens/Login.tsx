@@ -35,7 +35,7 @@ function Login() {
 
     const submit = await loginapi(formData?.email, formData?.password);
 
-    console.log('submit', submit);
+    // console.log('submit', submit);
 
     if (submit?.message === 'Login successful') {
       const token = submit?.token;

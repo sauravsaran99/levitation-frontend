@@ -30,7 +30,7 @@ export const basicDetails = async (
     state: state,
   });
 
-  console.log(name, email, phoneNumber, line1);
+  // console.log(name, email, phoneNumber, line1);
 
   var requestOptions: RequestInit = {
     method: "POST",

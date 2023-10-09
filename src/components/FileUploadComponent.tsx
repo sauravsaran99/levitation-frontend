@@ -59,7 +59,7 @@ const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allF
     for(let i = 0; i <= files.length -1; i++) {
       newData.push({name: files[i]?.name, path: files[i]?.path})
     };
-    console.log('newData', newData)
+    // console.log('newData', newData)
     setAllFormData({ ...allFormData, files: newData })
     setForm(2);
   };

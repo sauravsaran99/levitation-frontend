@@ -16,7 +16,7 @@ const SearchComponent: React.FC<basicDetailsProps> = ({ setData }) => {
         setLoade(true);
         const data = await getAllDetailsByEmail(email);
         setData(data);
-        console.log(data, 'data');
+        // console.log(data, 'data');
         setText('');
         setLoade(false);
     }

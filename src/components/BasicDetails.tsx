@@ -47,7 +47,7 @@ const BasicDetails: React.FC<basicDetailsProps> = ({ setForm, setAllFormData, al
             return;
         };
         if (!formData?.name || !formData?.email || !formData?.phoneNumber || !formData?.line1 || !formData?.line2 || !formData?.city || !formData?.state || !formData?.pincode || !formData?.country) {
-            console.log('for', formData)
+            // console.log('for', formData)
             setError('Error: All fields are required*');
             return;
         } else {

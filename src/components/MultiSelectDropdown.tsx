@@ -57,9 +57,9 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
   const nextFunct = async () => {
     setLoade(true);
     let allDetails = { ...allFormData, options: selectedOptions };
-    console.log('aa', allDetails);
+    // console.log('aa', allDetails);
     let userId = localStorage.getItem('userId');
-    console.log('id', userId);
+    // console.log('id', userId);
     const callBasicDetailsapi = await basicDetails(
       allDetails?.name,
       allDetails?.email,
@@ -74,7 +74,7 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
       allDetails?.options, userId);
 
     if (callBasicDetailsapi.error) {
-      console.log('call', callBasicDetailsapi);
+      // console.log('call', callBasicDetailsapi);
       setErrorMessage(callBasicDetailsapi.error);
       setLoade(false);
       return;
@@ -85,7 +85,7 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
     setLoade(false);
     Navigate('/');
   };
-  console.log('se', selectedOptions)
+  // console.log('se', selectedOptions)
 
   return (
     <>

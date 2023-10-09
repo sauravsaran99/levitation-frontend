@@ -17,7 +17,7 @@ interface Props {
 }
 
 const UserTable: React.FC<Props> = (users) => {
-  console.log('user', users.users);
+  // console.log('user', users.users);
   return (
     <table className="min-w-full bg-white border border-gray-300">
       <thead>
