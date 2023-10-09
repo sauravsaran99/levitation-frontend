@@ -21,7 +21,7 @@ export const register = async (
 
   try {
     const response = await fetch(
-      `https://levitation-backend-ya8c.vercel.app/v1/api/users/register`,
+      "https://drab-lime-sturgeon-wear.cyclic.app/v1/api/users/register",
       requestOptions
     );
 
