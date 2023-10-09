@@ -15,7 +15,7 @@ export const loginapi = async (email: string, password: string ) => {
   };
   try {
     const response = await fetch(
-      `levitation-backend-ya8c.vercel.app/v1/api/users/login`,
+      `https://levitation-backend-ya8c.vercel.app/v1/api/users/login`,
       requestOptions
     );
 

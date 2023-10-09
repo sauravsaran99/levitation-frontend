@@ -21,7 +21,7 @@ export const register = async (
 
   try {
     const response = await fetch(
-      `levitation-backend-ya8c.vercel.app/v1/api/users/register`,
+      `https://levitation-backend-ya8c.vercel.app/v1/api/users/register`,
       requestOptions
     );
 
