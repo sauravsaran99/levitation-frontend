@@ -24,7 +24,7 @@ const GeolocationStatus: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gray-200 p-4 rounded-md shadow-md">
+    <div className="bg-gray-200 p-4 rounded-md shadow-md dark:bg-black">
       <h2 className="text-lg font-semibold mb-2">Geolocation Status</h2>
       <p>{geolocationStatus}</p>
       {latitude && longitude && (

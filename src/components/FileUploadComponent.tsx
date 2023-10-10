@@ -73,7 +73,7 @@ const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allF
       <div className="p-4 border border-gray-300 rounded-lg cursor-pointer">
         <div {...getRootProps()} className="dropzone">
           <input {...getInputProps()} />
-          <p className="text-gray-600 text-center">
+          <p className="text-gray-600 text-center dark:text-white">
             Drag & drop PNG or PDF files here, or click to select files (up to {maxFileLimit} files allowed).
           </p>
         </div>

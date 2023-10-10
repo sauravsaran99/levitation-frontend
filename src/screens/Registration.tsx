@@ -58,20 +58,20 @@ function Registration() {
             <label className="block text-gray-700 text-sm font-bold mb-2 text-left" >
               Name
             </label>
-            <input onClick={() => setEmailerror(false)} value={formData?.name} onChange={(e: any) => setFormData({ ...formData, name: e.target.value })} className="shadow appearance-none border mb-3 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name" />
+            <input onClick={() => setEmailerror(false)} value={formData?.name} onChange={(e: any) => setFormData({ ...formData, name: e.target.value })} className="dark:text-white shadow appearance-none border mb-3 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name" />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2 text-left" >
               Email
             </label>
-            <input onClick={() => setEmailerror(false)} value={formData?.email} onChange={(e: any) => setFormData({ ...formData, email: e.target.value })} className={`shadow appearance-none border ${!emailerror ? "border" : "border-red-500"} mb-3 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`} id="username" type="text" placeholder="email" />
+            <input onClick={() => setEmailerror(false)} value={formData?.email} onChange={(e: any) => setFormData({ ...formData, email: e.target.value })} className={`dark:text-white shadow appearance-none border ${!emailerror ? "border" : "border-red-500"} mb-3 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`} id="username" type="text" placeholder="email" />
             {emailerror ? <p className="text-red-500 text-xs italic">Please choose a correct email.</p> : ''}
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2 text-left" >
               Password
             </label>
-            <input onClick={() => setPassworderror(false)} value={formData?.password} onChange={(e: any) => setFormData({ ...formData, password: e.target.value })} className={`shadow appearance-none border ${!passworderror ? "border" : "border-red-500"} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`} id="password" type="password" placeholder="******************" />
+            <input onClick={() => setPassworderror(false)} value={formData?.password} onChange={(e: any) => setFormData({ ...formData, password: e.target.value })} className={`dark:text-white shadow appearance-none border ${!passworderror ? "border" : "border-red-500"} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`} id="password" type="password" placeholder="******************" />
             {passworderror ? <p className="text-red-500 text-xs italic">Please choose a password.</p> : ''}
           </div>
           <div className="flex items-center justify-between">
@@ -79,7 +79,7 @@ function Registration() {
               Register
             </button>
           </div>
-          <p className="text-red-500 text-xs italic mt-2 font-bold">{messageError}*</p>
+          <p className="text-red-500 text-xs italic mt-2 font-bold">{messageError}</p>
         </form>
         <p>Have already account? <Link to="/login">Login</Link></p>
       </div>

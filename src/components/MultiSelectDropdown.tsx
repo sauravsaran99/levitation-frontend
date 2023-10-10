@@ -104,7 +104,7 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
               <div
                 key={option.value}
                 className={`p-2 cursor-pointer hover:bg-gray-200 ${selectedOptions.includes(option.value) ? 'bg-gray-200' : ''
-                  }`}
+                  } dark:bg-black`}
                 onClick={() => handleOptionToggle(option.value)}
               >
                 {option.label}
